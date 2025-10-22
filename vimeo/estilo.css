@@ -197,7 +197,7 @@ body {
 .videosParteNegra{
 
     display: flex;
-    
+    flex-direction: row;
 
 }
 
@@ -328,6 +328,13 @@ body {
     font-size: 10px;
  }
 
+ .videosParteNegra{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
  #primerVideoParteNegra video{
 
     width: 93%;
@@ -340,11 +347,11 @@ body {
 
 .subtitulosParteNegra{
 
-    font-size: 17px;
+    font-size: 23px;
     margin-top: 10px;
     display: flex;
     justify-content: start;
-    width: 300px;
+    width: 400px;
     text-align: left;
     margin-left: 20px;
 
