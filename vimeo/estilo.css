@@ -1,0 +1,360 @@
+
+/* Estilos generales */
+body {
+  font-family: "Lexend";
+  background-color: #FAFCFD;
+  color: #141A20;
+
+}
+
+#headerDerecha{
+
+  display: flex;
+  align-items: center; /* centra verticalmente los botones y la barra */
+  gap: 15px;  
+
+}
+
+.tresBarras{
+
+  margin-left: 10px;
+
+}
+
+.btnTransparente{
+
+  background: none;  
+  border: none;  
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  width: 177px;
+  font-family: "Lexend";
+  
+}
+
+.btnDefecto{
+  display: flex;
+  padding: 20px;
+  background-color: #17d5ff;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  width: 177px;
+  text-align: center;
+  justify-content: center;
+  font-family: "Lexend";
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+
+.header .logo img {
+  width: 100px;
+}
+
+
+/* Video de fondo */
+.video-background {
+  border-radius: 20px;
+  background-color: rgb(250, 250, 211);
+  width: 960px; 
+  margin: auto;
+  height: 829px;
+  justify-items: center;
+  position: relative;
+
+}
+
+#videoFondo video {
+  
+  position: absolute;/* Cuando quiera poner un video de fondo, necesito poner en posicion absoluta el video y el div donde se contenga el video en relative */
+
+  /* top 0, left 0, width y height al 100% y object-fit cover, lo que hace siempre que este bien puesto la posicion absoluta en el video, es hacer que se ajusten las esquinas y se posicione y se cuadricule bien por todo el div */
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 0; 
+  /* Para indicar que el video estara por detras de los textos y los botones, le ponemos el valor mas bajo, 0 */
+}
+
+#botonesVideo{
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  justify-content: center;
+  margin-top: 20px;
+  z-index: 2; /* mayor que el video, osea para que se vea encima del video, ya que el video tiene z-index 0*/
+}
+
+#botonesVideo button{
+  font-family: "Lexend";
+}
+
+#textosVideo{
+
+  position: absolute;
+
+  inset: 0; /* Equivale a escribir top: 0, right: 0, left: 0, bottom: 0, y sirve para colocar el texto, el cual esta dentro de un div, en el centro */
+
+  z-index: 2; /* mayor que el video, osea para que se vea encima del video, ya que el video tiene z-index 0*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+  width: 92%;
+
+}
+
+#tituloVideo{
+
+  text-align: center;
+  width: 45%;
+  font-size: 30px;
+}
+
+#parrafoVideo{
+
+  text-align: center;
+  width: 45%;
+
+}
+
+#textoPostVideo {
+  width: 490px;
+  margin: 30px auto; /* centra y deja un pequeño espacio debajo del video */
+  text-align: center;
+}
+
+
+#barraVideo{
+
+  width: 100%;
+
+}
+
+#subtituloVideo{
+
+  text-align: center;
+
+}
+
+#trozoConFondoDif {
+  margin: 0; /* elimina espacio arriba y abajo */
+  padding: 40px 0; /* opcional: espacio interno dentro del bloque */
+  width: 100%;
+  background-image: 
+     linear-gradient(rgba(248, 251, 253, 0.96), rgba(248, 251, 253, 0.96)), 
+     url("https://vimeo.bynder.com/m/68c7ef88b8fed205/original/Vector-Vimeo-Logo.svg");
+  
+  text-align: center;
+}
+
+
+
+#textosConFondoDif{
+
+  width: 490px;
+  margin: 30px auto; /* centra y deja un pequeño espacio debajo del video */
+  text-align: center;
+
+
+}
+
+/* Trozo negro */
+#trozoNegro {
+  margin: 0; /* elimina espacio entre este div y el anterior */
+  padding: 40px 0; /* opcional: espacio interno */
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+#textoFondoNegro{
+  text-align: center;
+  width: 600px;
+  margin: auto;
+}
+
+
+.videosParteNegra{
+
+    display: flex;
+    
+
+}
+
+#primerVideoParteNegra video{
+
+    display: flex;
+    width: 400px;
+    margin: auto;
+
+}
+
+
+
+
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color:white;
+  color: #FAFCFD;
+}
+
+/* =======================
+   MODO MÓVIL (RESPONSIVE)
+   ======================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header {
+    flex-direction: row;              /* mantiene todo en una línea */
+    justify-content: space-between;   /* separa logo e items */
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  #headerDerecha {
+    flex-direction: row;              /* botones en horizontal */
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btnDefecto,
+  .btnTransparente {
+    width: auto;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .tresBarras {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* VIDEO PRINCIPAL */
+  .video-background {
+    width: 95%;
+    height: auto;
+    aspect-ratio: 4/6;  /* Esto sirve para que el aspecto de este caso el video, sea basicamente la altura respecto el ancho, es decir, lo que yo estoy poniendo aqui es que por cada 4 unidades de ancho, seran 6 de altura, por lo cual siempre que se cambie de movil o dispostivo el aspecto respondera según el dispositivo */
+    border-radius: 15px;
+  }
+
+  #textosVideo {
+    padding: 10px;
+    width: 100%;
+  }
+
+  #tituloVideo {
+    width: 90%;
+  }
+
+  #tituloVideo h1 {
+    font-size: 22px;        /* tamaño más pequeño */
+  }
+
+  #parrafoVideo {
+    width: 90%;
+  }
+
+  #parrafoVideo p {
+    font-size: 14px;        /* texto más legible y compacto */
+  }
+
+  #botonesVideo {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+  }
+
+  #botonesVideo button {
+    width: 75%;
+    max-width: 240px;
+  }
+
+  /* Texto debajo del video */
+  #textoPostVideo {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  #textosConFondoDif {
+    width: 90%;
+  }
+
+  #textosConFondoDif h1 {
+    font-size: 20px;
+  }
+
+  #textosConFondoDif p {
+    font-size: 14px;
+  }
+
+  #trozoConFondoDif {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  /* Barra inferior */
+  #barraVideo img {
+    width: 100%;
+  }
+
+  #textoFondoNegro{
+    text-align: center;
+    margin: auto;
+    width: 98%;
+    font-size: 10px;
+ }
+
+ #primerVideoParteNegra video{
+
+    width: 93%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    min-height: 220px;
+
+}
+
+.subtitulosParteNegra{
+
+    font-size: 17px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+    width: 300px;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 13px;
+  }
+
+}
